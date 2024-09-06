@@ -11,6 +11,6 @@ This project is a simple and customisable card component built using HTML, CSS, 
 ## Demo
 You can view a live demo of this project at: [Card Component Demo](https://ux-ui.com.au/card-component/)
 
-![Card Component Demo](https://ux-ui.com.au/card-component/)
+![Card Component screenshot](https://ux-ui.com.au/card-component/demo.jpg)
 
 
