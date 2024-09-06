@@ -1,0 +1,202 @@
+/* Define CSS Variables */
+:root {
+    --font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    --color-primary: #a7003f;
+    --color-secondary: #fdc470;
+    --color-background: #f6e5eb;
+    --color-text: #fff;
+    --transition-speed: 0.3s;
+    --border-radius: 0.5rem;
+    --font-size-large: 1.2rem;
+    --font-weight-bold: 600;
+    --padding: 1rem;
+    --gap: 1.5rem;
+    --outline-focus: rgb(37, 49, 56);
+  }
+  
+  /* General Styles */
+  body, button {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .content {
+    margin: 0 auto;
+    padding: 0 var(--padding);
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+  }
+  
+  .card-intro {
+    font-size: 1.8rem;
+    }
+  
+  /* Card Component Styles */
+  .card-component {
+    gap: var(--gap);
+  }
+  
+  .card {
+    display: none;
+    border-radius: var(--border-radius);
+    gap: var(--gap);
+    transition: opacity var(--transition-speed) ease-in-out, transform var(--transition-speed) ease-in-out;
+  }
+  
+  .card.active {
+    display: grid;
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .card-feature-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .card-feature-content {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+  }
+  
+  /* Tab Styles */
+  .tab-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 1rem 0;
+    width: 100%;
+    align-items: center;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    gap: var(--gap); 
+    -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
+  }
+  
+  .tab-container::-webkit-scrollbar {
+    height: 8px; /* Scrollbar height for WebKit browsers */
+  }
+  
+  .tab-container::-webkit-scrollbar-thumb {
+    background-color: var(--color-secondary);
+    border-radius: var(--border-radius);
+  }
+  
+  .tab {
+    color: var(--color-primary);
+    background-color: #fff;
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    cursor: pointer;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    white-space: nowrap; 
+  }
+  
+  .tab:hover,
+  .tab.active,
+  .tab:focus {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    border-color: var(--color-primary);
+  }
+  
+  .tab:focus {
+    outline: 2px solid var(--outline-focus);
+    outline-offset: 2px;
+  }
+  
+  /* Card Container Styles */
+  .card-container {
+    background-color: var(--color-background);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-top: var(--gap);
+  }
+  
+  .card-container h2 {
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  /* Media Queries for Mobile Screens */
+  @media (max-width: 599px) {
+    .card-component {
+      display: grid;
+      grid-template-columns: 1fr; /* Single column layout for mobile */
+    }
+  
+    .card {
+      grid-template-columns: 1fr; /* Single column layout for mobile */
+    }
+  
+    .card-feature-img {
+      order: 1; /* Display image first */
+    }
+  }
+  
+  /* Media Queries for Larger Screens */
+  @media (min-width: 600px) {
+    .content {
+      padding: 0 2rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    ul {
+      padding-left: 2rem;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .card-component {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: var(--gap);
+    }
+  
+    .tab-container {
+      flex-direction: column; /* Stack tabs vertically on larger screens */
+      gap: 5px;
+      overflow-x: visible; /* Disable horizontal scrolling on larger screens */
+      padding: 0;
+    }
+  
+    .tab {
+      text-align: left;
+      margin: 0;
+      width: 100%;
+    }
+  
+    .card {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .card-feature-content {
+      order: 0; 
+    }
+  
+    .card-container {
+      margin-top: 0;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .content {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  
+    .card-wrapper {
+      margin: auto;
+      max-width: 1150px;
+    }
+  }
