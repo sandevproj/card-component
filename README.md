@@ -8,6 +8,8 @@ This project is a simple and customisable card component built using HTML, CSS, 
 - **Responsive Design**: The component is responsive and adjusts to different screen sizes.
 - **Accessible Tabs**: Keyboard navigation is supported for the tab elements, enhancing accessibility.
 
+## Demo
 
+![Card Component Demo](https://ux-ui.com.au/card-component/)
 
 
