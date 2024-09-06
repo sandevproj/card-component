@@ -9,6 +9,7 @@ This project is a simple and customisable card component built using HTML, CSS, 
 - **Accessible Tabs**: Keyboard navigation is supported for the tab elements, enhancing accessibility.
 
 ## Demo
+You can view a live demo of this project at: [Card Component Demo](https://ux-ui.com.au/card-component/)
 
 ![Card Component Demo](https://ux-ui.com.au/card-component/)
 
